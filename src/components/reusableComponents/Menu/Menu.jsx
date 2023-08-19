@@ -37,20 +37,20 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
   };
 
   return (
-    <Backdrop handleBackdropClick={handleBackdropClick}>
-      <CSSTransition
-        nodeRef={nodeRef}
-        in={menuOpen}
-        timeout={1000}
-        classNames="menu"
-        unmountOnExit
-      >
+    <CSSTransition
+      nodeRef={nodeRef}
+      in={menuOpen}
+      timeout={1000}
+      classNames="menu"
+      unmountOnExit
+    >
+      <Backdrop handleBackdropClick={handleBackdropClick}>
         <ContentContainer ref={nodeRef} className="menu">
           <Navigation menu="menu" handleLinkClick={handleLinkClick} />
           <IconToggleOn />
         </ContentContainer>
-      </CSSTransition>
-    </Backdrop>
+      </Backdrop>
+    </CSSTransition>
   );
 };
 
