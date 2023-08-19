@@ -1,10 +1,10 @@
-import { createGlobalStyle } from "styled-components";
-import { normalize } from "styled-normalize";
+import { createGlobalStyle } from 'styled-components';
+import { normalize } from 'styled-normalize';
 
-import Regular from "../fonts/Poppins-Regular.ttf";
-import Medium from "../fonts/Poppins-Medium.ttf";
-import SemiBold from "../fonts/Poppins-SemiBold.ttf";
-import Bold from "../fonts/Poppins-Bold.ttf";
+import Regular from '../fonts/Poppins-Regular.ttf';
+import Medium from '../fonts/Poppins-Medium.ttf';
+import SemiBold from '../fonts/Poppins-SemiBold.ttf';
+import Bold from '../fonts/Poppins-Bold.ttf';
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -41,7 +41,7 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition: 350ms cubic-bezier(0.4, 0, 0.2, 1); */
    
   &.modal-open{
     overflow: hidden;
@@ -94,4 +94,6 @@ button {
 input {
   padding: 0;
 }
+
+
 `;

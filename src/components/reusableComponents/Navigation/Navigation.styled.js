@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const StyledNavigation = styled.nav`
   margin-left: auto;
@@ -9,26 +9,26 @@ export const StyledNavigation = styled.nav`
   gap: 80px;
   margin-bottom: 80px;
 
-  @media ${(props) => props.theme.media.tab} {
+  @media ${props => props.theme.media.tab} {
     gap: 60px;
   }
 `;
 
 export const NavigationLink = styled(NavLink)`
   display: flex;
-  flex-direction: ${(props) => (props.status === "menu" ? "row" : "column")};
+  flex-direction: ${props => (props.status === 'menu' ? 'row' : 'column')};
   align-items: center;
   gap: 20px;
   font-size: 25px;
 
-  color: ${(props) => props.theme.dark.title};
-  transition: ${(props) => props.theme.transition};
+  color: ${props => props.theme.dark.title};
+  transition: ${props => props.theme.transition};
 
-  @media ${(props) => props.theme.media.tab} {
+  @media ${props => props.theme.media.tab} {
     gap: 10px;
     font-size: 18px;
   }
-  @media ${(props) => props.theme.media.desktop} {
+  @media ${props => props.theme.media.desktop} {
     font-size: 20px;
   }
 
@@ -38,13 +38,13 @@ export const NavigationLink = styled(NavLink)`
 
   &.active {
     font-weight: 500;
-    color: ${(props) => props.theme.dark.activeLink};
-    fill: ${(props) => props.theme.dark.activeLink};
+    color: ${props => props.theme.dark.activeLink};
+    fill: ${props => props.theme.dark.activeLink};
   }
 
   &.active svg {
-    fill: ${(props) => props.theme.dark.activeLink};
-    stroke: ${(props) => props.theme.dark.activeLink};
+    fill: ${props => props.theme.dark.activeLink};
+    stroke: ${props => props.theme.dark.activeLink};
   }
 
   &:hover {

@@ -1,7 +1,7 @@
-import Logo from "../Logo/Logo";
-import IconListUl from "../NavigationIcons/IconListUl";
-import IconWeatherHailSun from "../NavigationIcons/IconWeatherHailSun";
-import { NavigationLink, StyledNavigation } from "./Navigation.styled";
+import Logo from '../Logo/Logo';
+import IconListUl from '../NavigationIcons/IconListUl';
+import IconWeatherHailSun from '../NavigationIcons/IconWeatherHailSun';
+import { NavigationLink, StyledNavigation } from './Navigation.styled';
 
 const Navigation = ({ status, handleLinkClick }) => {
   return (

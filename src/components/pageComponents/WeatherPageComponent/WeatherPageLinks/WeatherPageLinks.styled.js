@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const LinksContainer = styled.div`
   width: 100%;
@@ -8,28 +8,28 @@ export const LinksContainer = styled.div`
   padding: 15px;
   border-radius: 20px;
 
-  background-color: ${(props) => props.theme.dark.contentBackground};
+  background-color: ${props => props.theme.dark.contentBackground};
 
-  @media ${(props) => props.theme.media.tab} {
+  @media ${props => props.theme.media.tab} {
     padding: 30px;
   }
 `;
 
 export const WeatherPageLink = styled(NavLink)`
   font-size: 16px;
-  color: ${(props) => props.theme.dark.secondaryText};
-  transition: ${(props) => props.theme.transition};
+  color: ${props => props.theme.dark.secondaryText};
+  transition: ${props => props.theme.transition};
 
-  @media ${(props) => props.theme.media.tab} {
+  @media ${props => props.theme.media.tab} {
     font-size: 20px;
   }
 
   &.active {
-    color: ${(props) => props.theme.dark.activeLink};
+    color: ${props => props.theme.dark.activeLink};
     cursor: default;
 
     &:hover {
-      scale: 1;
+      scale: 1.01;
       text-decoration: none;
     }
   }

@@ -37,20 +37,20 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
   };
 
   return (
-    <CSSTransition
-      nodeRef={nodeRef}
-      in={menuOpen}
-      timeout={1000}
-      classNames="menu"
-      unmountOnExit
-    >
-      <Backdrop handleBackdropClick={handleBackdropClick}>
-        <ContentContainer ref={nodeRef} className="menu">
-          <Navigation menu="menu" handleLinkClick={handleLinkClick} />
+    <Backdrop handleBackdropClick={handleBackdropClick}>
+      <CSSTransition
+        nodeRef={nodeRef}
+        in={menuOpen}
+        timeout={300}
+        classNames="menu"
+        unmountOnExit
+      >
+        <ContentContainer className="menus" menuOpen={menuOpen} ref={nodeRef}>
+          <Navigation status="menu" handleLinkClick={handleLinkClick} />
           <IconToggleOn />
         </ContentContainer>
-      </Backdrop>
-    </CSSTransition>
+      </CSSTransition>
+    </Backdrop>
   );
 };
 
