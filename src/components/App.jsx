@@ -1,16 +1,66 @@
-export const App = () => {
+import { Route, Routes } from 'react-router-dom';
+import { lazy } from 'react';
+import { GlobalStyle } from '../Styles/GlobalStyle';
+import { ThemeProvider } from 'styled-components';
+import { theme } from '../Styles/Theme';
+
+// import { Toaster } from 'react-hot-toast';
+import { TemperatureProvider } from '../hooks/TemperatureContext';
+import { Suspense } from 'react';
+import Spinner from './reusableComponents/Spinner/Spinner';
+import SharedLayOut from './reusableComponents/SharedLayOut/SharedLayOut';
+const WelcomePage = lazy(() => import('../pages/WelcomePage'));
+const WeatherPage = lazy(() => import('../pages/WeatherPage'));
+const HourlyForecastMobPage = lazy(() =>
+  import('../pages/HourlyForecastMobPage')
+);
+const SevenDaysForecastMobPage = lazy(() =>
+  import('../pages/SevenDaysForecastMobPage')
+);
+// const CitiesPage = lazy(() => import('../pages/CitiesPage'));
+
+function App() {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      {/* <Toaster
+        position="top-center"
+        toastOptions={{
+          error: {
+            duration: 5000,
+            style: {
+              border: `2px solid ${theme.globalColors.error}`,
+              color: ` ${theme.globalColors.error}`,
+            },
+            iconTheme: {
+              primary: `${theme.globalColors.error}`,
+              secondary: "white",
+            },
+          },
+        }}
+      /> */}
+      <TemperatureProvider>
+        <Suspense fallback={<Spinner />}>
+          <Routes>
+            <Route path="/" element={<WelcomePage />} />
+            <Route path="/" element={<SharedLayOut />}>
+              <Route path="weather/" element={<WeatherPage />}>
+                <Route
+                  path="today_forecast"
+                  element={<HourlyForecastMobPage />}
+                />
+                <Route
+                  path="7-day_forecast"
+                  element={<SevenDaysForecastMobPage />}
+                />
+              </Route>
+              {/* <Route path="cities/" element={<CitiesPage />} /> */}
+            </Route>
+          </Routes>
+        </Suspense>
+      </TemperatureProvider>
+    </ThemeProvider>
   );
-};
+}
+
+export default App;
