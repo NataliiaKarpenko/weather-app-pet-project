@@ -3,23 +3,23 @@ import styled from 'styled-components';
 export const ContentContainer = styled.div`
   position: absolute;
 
-  &.menu-enter {
-    transform: translateX(0);
+  /* &.menu-enter {
+    transform: translateX(-100%);
   }
 
   &.menu-enter-active {
-    transform: translateX(-100%);
+    transform: translateX(0);
 
     transition: transform 300ms ease-out;
   }
   &.menu-exit {
-    transform: translateX(-100%);
+    transform: translateX(0);
   }
 
   &.menu-exit-active {
-    transform: translateX(0);
+    transform: translateX(-100%);
     transition: transform 300ms ease-out;
-  }
+  } */
 
   width: 70%;
   height: 100%;
