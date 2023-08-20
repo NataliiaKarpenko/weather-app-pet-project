@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/weather-app-pet-project/static/css/main.8aacefc1.css",
-    "main.js": "/weather-app-pet-project/static/js/main.02e648bd.js",
+    "main.js": "/weather-app-pet-project/static/js/main.43913fde.js",
     "static/js/665.981dcd50.chunk.js": "/weather-app-pet-project/static/js/665.981dcd50.chunk.js",
     "static/js/722.135fe080.chunk.js": "/weather-app-pet-project/static/js/722.135fe080.chunk.js",
     "static/js/418.f671787a.chunk.js": "/weather-app-pet-project/static/js/418.f671787a.chunk.js",
@@ -26,7 +26,7 @@
     "static/media/wind.png": "/weather-app-pet-project/static/media/wind.50a6737b7af1f06d88c2.png",
     "index.html": "/weather-app-pet-project/index.html",
     "main.8aacefc1.css.map": "/weather-app-pet-project/static/css/main.8aacefc1.css.map",
-    "main.02e648bd.js.map": "/weather-app-pet-project/static/js/main.02e648bd.js.map",
+    "main.43913fde.js.map": "/weather-app-pet-project/static/js/main.43913fde.js.map",
     "665.981dcd50.chunk.js.map": "/weather-app-pet-project/static/js/665.981dcd50.chunk.js.map",
     "722.135fe080.chunk.js.map": "/weather-app-pet-project/static/js/722.135fe080.chunk.js.map",
     "418.f671787a.chunk.js.map": "/weather-app-pet-project/static/js/418.f671787a.chunk.js.map",
@@ -36,6 +36,6 @@
   },
   "entrypoints": [
     "static/css/main.8aacefc1.css",
-    "static/js/main.02e648bd.js"
+    "static/js/main.43913fde.js"
   ]
 }
