@@ -8,6 +8,7 @@ import { requestWeatherByCity } from '../../../services/API_services';
 import { WeatherPageContainer } from './WeatherPageComponent.styled';
 import WeatherPageLinks from './WeatherPageLinks/WeatherPageLinks';
 import { useTemperature } from '../../../hooks/TemperatureContext';
+import Error from 'components/reusableComponents/Error/Error';
 
 const WeatherPageComponent = () => {
   const [icon, setIcon] = useState('');
@@ -22,6 +23,7 @@ const WeatherPageComponent = () => {
   const city = searchParams.get('city');
   const [cityName, setCityName] = useState('');
   const { isFahrenheit, setIsFahrenheit } = useTemperature();
+  const [openError, setOpenError] = useState(false);
 
   useEffect(() => {
     if (!city) return;
@@ -45,6 +47,7 @@ const WeatherPageComponent = () => {
           searchParams.delete('city');
           setSearchParams(searchParams);
           setStatus('rejected');
+          setOpenError(true);
 
           if (error.message === 'Request failed with status code 404') {
             toast.error(
@@ -76,9 +79,9 @@ const WeatherPageComponent = () => {
   return (
     <WeatherPageContainer>
       {status === 'pending' && <Spinner />}
-      {status === 'rejected' && <p>vbgfrt</p>}
+
       {status === 'resolved' && (
-        <>
+        <div>
           <CurrentWeather
             city={cityName}
             temperature={temperature}
@@ -93,7 +96,10 @@ const WeatherPageComponent = () => {
           <WeatherPageLinks city={cityName} />
 
           <Outlet />
-        </>
+        </div>
+      )}
+      {status === 'rejected' && (
+        <Error status={status} open={openError} setOpen={setOpenError} />
       )}
     </WeatherPageContainer>
   );

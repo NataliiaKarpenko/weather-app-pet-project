@@ -1,4 +1,4 @@
-import CitiesPageComponent from "../components/CitiesPageComponent/CitiesPageComponent";
+import CitiesPageComponent from '../components/pageComponents/CitiesPageComponent/CitiesPageComponent';
 
 const CitiesPage = () => {
   return (

@@ -1,26 +1,36 @@
 import styled from 'styled-components';
 
-export const ContentContainer = styled.div`
-  position: absolute;
+export const StyledBackdrop = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
 
-  /* &.menu-enter {
+  background-color: rgba(0, 0, 0, 0.6);
+
+  &.menu-enter {
+    opacity: 0;
     transform: translateX(-100%);
   }
-
   &.menu-enter-active {
+    opacity: 1;
     transform: translateX(0);
-
-    transition: transform 300ms ease-out;
+    transition: opacity 300ms, transform 300ms;
   }
   &.menu-exit {
+    opacity: 1;
     transform: translateX(0);
   }
-
   &.menu-exit-active {
+    opacity: 0;
     transform: translateX(-100%);
-    transition: transform 300ms ease-out;
-  } */
+    transition: opacity 300ms, transform 300ms;
+  }
+`;
 
+export const ContentContainer = styled.div`
   width: 70%;
   height: 100%;
   padding: 50px 30px;

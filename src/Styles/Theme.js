@@ -1,5 +1,5 @@
 export const theme = {
-  transition: 'all 1000ms ease-out',
+  transition: 'all 300ms ease-out',
 
   media: {
     sx: '(max-width: 374px)',

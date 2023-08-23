@@ -1,33 +1,31 @@
-import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
-import InputSearch from "./InputIcons/InputSearch";
-import InputClose from "./InputIcons/InputClose";
+import InputSearch from './InputIcons/InputSearch';
+import InputClose from './InputIcons/InputClose';
 import {
   FormContainer,
   InputContainer,
   Input,
   Button,
   ErrorMessage,
-} from "./InputForm.styled";
-import { useEffect } from "react";
+} from './InputForm.styled';
 
 const InputForm = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const urlSearchParams = searchParams.get("city");
+  const urlSearchParams = searchParams.get('city');
   const city = urlSearchParams
     ? urlSearchParams.charAt(0).toUpperCase() + urlSearchParams.slice(1)
-    : "";
-  // const [inputValue, setInputValue] = useState(city);
+    : '';
   const [inputValue, setInputValue] = useState(city);
 
   useEffect(() => {
     if (!city) {
-      setInputValue("");
+      setInputValue('');
     }
   }, [city]);
 
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
   const [close, setClose] = useState(() => {
     if (!inputValue) {
       return false;
@@ -37,7 +35,7 @@ const InputForm = () => {
   });
   const isError = message ? true : false;
 
-  const onInputChange = (event) => {
+  const onInputChange = event => {
     const newInputValue = event.target.value;
     setInputValue(newInputValue);
     const letterTest = /^[a-zA-Z\s'-]+$/;
@@ -50,19 +48,19 @@ const InputForm = () => {
 
     if (!letterTest.test(newInputValue) && newInputValue.length !== 0) {
       setMessage(
-        "Invalid name. May contain only letters,  apostrophes, hyphens and spaces."
+        'Invalid name. May contain only letters,  apostrophes, hyphens and spaces.'
       );
     } else {
-      setMessage("");
+      setMessage('');
     }
   };
 
-  const onFormSubmit = (event) => {
+  const onFormSubmit = event => {
     event.preventDefault();
     const inputValue = event.target[0].value;
 
-    if (event.target[0].value === "") {
-      setMessage("Required");
+    if (event.target[0].value === '') {
+      setMessage('Required');
     } else {
       setSearchParams({ city: inputValue.trim().toLowerCase() });
     }
@@ -74,7 +72,7 @@ const InputForm = () => {
         <Input
           type="text"
           name="city"
-          value={inputValue ? inputValue : ""}
+          value={inputValue ? inputValue : ''}
           placeholder="Enter a city"
           autoComplete="off"
           onChange={onInputChange}
@@ -84,7 +82,7 @@ const InputForm = () => {
           <Button
             type="button"
             onClick={() => {
-              setInputValue("");
+              setInputValue('');
               setClose(false);
             }}
           >

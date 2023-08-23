@@ -5,28 +5,23 @@ import Logo from '../Logo/Logo';
 import Menu from '../../reusableComponents/Menu/Menu';
 import { StyledFooter } from './Footer.styled';
 import MenuIcon from './MenuIcon/MenuIcon';
-import _debounce from 'lodash/debounce';
 
-const Footer = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+const Footer = ({ displayFlex }) => {
+  const [open, setOpen] = useState(false);
 
   const menuOpenHandler = () => {
-    debouncedSetMenuOpen();
+    setOpen(true);
   };
-  const debouncedSetMenuOpen = _debounce(() => {
-    setMenuOpen(true);
-  }, 300);
+  console.log(displayFlex);
 
   return (
-    <>
-      <StyledFooter>
-        <FooterContainer>
-          <MenuIcon menuOpenHandler={menuOpenHandler} />
-          <Logo />
-        </FooterContainer>
-      </StyledFooter>
-      {menuOpen && <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />}
-    </>
+    <StyledFooter displayFlex={displayFlex}>
+      <FooterContainer>
+        <Logo />
+        <MenuIcon menuOpenHandler={menuOpenHandler} />
+      </FooterContainer>
+      <Menu open={open} setOpen={setOpen} />
+    </StyledFooter>
   );
 };
 

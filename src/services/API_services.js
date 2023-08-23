@@ -1,10 +1,13 @@
-import axios from "axios";
+import axios from 'axios';
+import { addLeadingZero } from 'utils/getCurrentTime';
 
-const URL = "https://api.openweathermap.org/";
+const URL = 'https://api.openweathermap.org/';
 
-const API_KEY = "5293d8454b519c30f6f6331f38c85b4c";
+const API_KEY = '5293d8454b519c30f6f6331f38c85b4c';
 
-export const requestWeatherByCity = async (city) => {
+const timeZone_API = '6ANWSK2XPW9R';
+
+export const requestWeatherByCity = async city => {
   const weatherByCity = await axios.get(
     `${URL}data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
   );
@@ -12,7 +15,7 @@ export const requestWeatherByCity = async (city) => {
   return weatherByCity;
 };
 
-export const requestThreeHourForecast = async (city) => {
+export const requestThreeHourForecast = async city => {
   const threeHourForecast = await axios.get(
     `${URL}data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`
   );
@@ -30,7 +33,7 @@ export const requestThreeHourForecast = async (city) => {
 
 // requestCoords("Kyiv");
 
-export const requestSevenDaysForecast = async (city) => {
+export const requestSevenDaysForecast = async city => {
   const geoResponse = await axios.get(
     `${URL}geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`
   );
@@ -56,7 +59,7 @@ export const requestSevenDaysForecast = async (city) => {
 //   return sevenDaysForecast.data;
 // };
 
-const searchCurrentPosition = async (position) => {
+const searchCurrentPosition = async position => {
   try {
     let lat = position.coords.latitude;
     let lon = position.coords.longitude;
@@ -72,15 +75,15 @@ const searchCurrentPosition = async (position) => {
 };
 
 export const showCurrentPosition = async () => {
-  if (!("geolocation" in navigator)) {
-    console.log("Geolocation is not available");
+  if (!('geolocation' in navigator)) {
+    console.log('Geolocation is not available');
   }
 
   try {
     const position = await new Promise((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(
-        (position) => resolve(position),
-        (error) => reject(error)
+        position => resolve(position),
+        error => reject(error)
       );
     });
 
@@ -89,6 +92,27 @@ export const showCurrentPosition = async () => {
 
     return localCity;
   } catch (error) {
-    console.log("Geolocation error or API error:", error);
+    console.log('Geolocation error or API error:', error);
   }
 };
+
+export const requestLocalTime = async city => {
+  const geoResponse = await axios.get(
+    `${URL}geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`
+  );
+  const { lat, lon } = geoResponse.data[0];
+  console.log(lat);
+  const localTime = await axios.get(
+    `http://api.timezonedb.com/v2.1/get-time-zone?key=${timeZone_API}&format=json&by=position&lat=${lat}&lng=${lon}`
+  );
+
+  console.log(localTime);
+  const local = new Date(localTime.data.formatted);
+
+  const localHours = addLeadingZero(local.getHours());
+  const localminutes = addLeadingZero(local.getHours());
+  console.log(`${localHours}:${localminutes}`);
+  return `${localHours}:${localminutes}`;
+};
+
+requestLocalTime('oslo');

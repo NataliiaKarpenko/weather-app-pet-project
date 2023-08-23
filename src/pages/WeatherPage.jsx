@@ -1,9 +1,9 @@
 import WeatherPageComponent from '../components/pageComponents/WeatherPageComponent/WeatherPageComponent';
 
-const WeatherPage = ({ handleLinkClick }) => {
+const WeatherPage = () => {
   return (
     <div>
-      <WeatherPageComponent handleLinkClick={handleLinkClick} />
+      <WeatherPageComponent />
     </div>
   );
 };

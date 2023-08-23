@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { setTemp } from '../../../../../utils/setTemp';
+import { useTemperature } from '../../../../../hooks/TemperatureContext';
 import {
   addLeadingZero,
   showDay,
@@ -17,8 +19,6 @@ import {
   Degrees,
   Devider,
 } from './CityContainer.styled';
-import { setTemp } from '../../../../../utils/setTemp';
-import { useTemperature } from '../../../../../hooks/TemperatureContext';
 
 const CityContainer = ({
   city,

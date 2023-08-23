@@ -32,10 +32,6 @@ export const NavigationLink = styled(NavLink)`
     font-size: 20px;
   }
 
-  /* &:nth-child(2) {
-    margin-bottom: 60px;
-  } */
-
   &.active {
     font-weight: 500;
     color: ${props => props.theme.dark.activeLink};

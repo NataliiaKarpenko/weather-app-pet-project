@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledContainer = styled.div`
   position: relative;
@@ -7,25 +7,25 @@ export const StyledContainer = styled.div`
   padding: 15px;
 
   border-radius: 20px;
-  background-color: ${(props) => props.theme.dark.containerBackground};
+  background-color: ${props => props.theme.dark.containerBackground};
 
-  @media ${(props) => props.theme.media.sx} {
+  @media ${props => props.theme.media.sx} {
     width: 100%;
     max-width: 375px;
   }
 
-  @media ${(props) => props.theme.media.phone} {
+  @media ${props => props.theme.media.phone} {
     width: 375px;
   }
 
-  @media ${(props) => props.theme.media.tab} {
+  @media ${props => props.theme.media.tab} {
     width: 768px;
     padding: 30px;
     display: flex;
     justify-content: right;
   }
 
-  @media ${(props) => props.theme.media.desktop} {
+  @media ${props => props.theme.media.desktop} {
     width: 900px;
     padding: 40px;
   }

@@ -1,6 +1,7 @@
-import { useRef } from "react";
-import { LinksContainer, WeatherPageLink } from "./WeatherPageLinks.styled";
-import _debounce from "lodash/debounce";
+import { useRef } from 'react';
+import _debounce from 'lodash/debounce';
+
+import { LinksContainer, WeatherPageLink } from './WeatherPageLinks.styled';
 
 const WeatherPageLinks = ({ city }) => {
   const myRef = useRef(null);
@@ -9,15 +10,14 @@ const WeatherPageLinks = ({ city }) => {
     if (myRef.current) {
       window.scrollTo({
         top: myRef.current.offsetTop,
-        behavior: "smooth",
+        behavior: 'smooth',
       });
     }
-  }, 300);
+  }, 1000);
 
   return (
     <LinksContainer ref={myRef}>
       <WeatherPageLink to={`today_forecast?city=${city}`} onClick={scrollDown}>
-        {" "}
         Today's forecast
       </WeatherPageLink>
       <WeatherPageLink to={`7-day_forecast?city=${city}`} onClick={scrollDown}>

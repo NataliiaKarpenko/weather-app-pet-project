@@ -9,6 +9,7 @@ import { TemperatureProvider } from '../hooks/TemperatureContext';
 import { Suspense } from 'react';
 import Spinner from './reusableComponents/Spinner/Spinner';
 import SharedLayOut from './reusableComponents/SharedLayOut/SharedLayOut';
+import Notification from './reusableComponents/Notification/Notification';
 const WelcomePage = lazy(() => import('../pages/WelcomePage'));
 const WeatherPage = lazy(() => import('../pages/WeatherPage'));
 const HourlyForecastMobPage = lazy(() =>
@@ -17,29 +18,15 @@ const HourlyForecastMobPage = lazy(() =>
 const SevenDaysForecastMobPage = lazy(() =>
   import('../pages/SevenDaysForecastMobPage')
 );
-// const CitiesPage = lazy(() => import('../pages/CitiesPage'));
+const CitiesPage = lazy(() => import('../pages/CitiesPage'));
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      {/* <Toaster
-        position="top-center"
-        toastOptions={{
-          error: {
-            duration: 5000,
-            style: {
-              border: `2px solid ${theme.globalColors.error}`,
-              color: ` ${theme.globalColors.error}`,
-            },
-            iconTheme: {
-              primary: `${theme.globalColors.error}`,
-              secondary: "white",
-            },
-          },
-        }}
-      /> */}
+
       <TemperatureProvider>
+        <Notification />
         <Suspense fallback={<Spinner />}>
           <Routes>
             <Route path="/" element={<WelcomePage />} />
@@ -54,7 +41,7 @@ function App() {
                   element={<SevenDaysForecastMobPage />}
                 />
               </Route>
-              {/* <Route path="cities/" element={<CitiesPage />} /> */}
+              <Route path="cities/" element={<CitiesPage />} />
             </Route>
           </Routes>
         </Suspense>

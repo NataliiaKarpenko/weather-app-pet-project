@@ -1,6 +1,5 @@
 import { useTemperature } from '../../../../../hooks/TemperatureContext';
 
-import { setTemp } from '../../../../../utils/setTemp';
 import {
   Text,
   Title,
@@ -12,6 +11,7 @@ import DropIcon from './WeatherConditionsIcons/DropIcon';
 import ThermometerIcon from './WeatherConditionsIcons/ThermometerIcons';
 import WeatherIcon from './WeatherConditionsIcons/WeatherIcon';
 import WindIcon from './WeatherConditionsIcons/WindIcon';
+import { setTemp } from '../../../../../utils/setTemp';
 
 const WeatherConditions = ({
   weatherConditions,
