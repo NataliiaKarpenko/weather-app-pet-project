@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/weather-app-pet-project/static/css/main.b5320759.css",
-    "main.js": "/weather-app-pet-project/static/js/main.4ebd4b71.js",
-    "static/js/665.b4e39fde.chunk.js": "/weather-app-pet-project/static/js/665.b4e39fde.chunk.js",
-    "static/js/975.b5356e51.chunk.js": "/weather-app-pet-project/static/js/975.b5356e51.chunk.js",
-    "static/js/418.d1bd18f2.chunk.js": "/weather-app-pet-project/static/js/418.d1bd18f2.chunk.js",
-    "static/js/551.d963e8ac.chunk.js": "/weather-app-pet-project/static/js/551.d963e8ac.chunk.js",
-    "static/js/154.47452a6f.chunk.js": "/weather-app-pet-project/static/js/154.47452a6f.chunk.js",
+    "main.js": "/weather-app-pet-project/static/js/main.34ced24b.js",
+    "static/js/665.e9ad356d.chunk.js": "/weather-app-pet-project/static/js/665.e9ad356d.chunk.js",
+    "static/js/907.c71e7936.chunk.js": "/weather-app-pet-project/static/js/907.c71e7936.chunk.js",
+    "static/js/418.20de1198.chunk.js": "/weather-app-pet-project/static/js/418.20de1198.chunk.js",
+    "static/js/551.732d66de.chunk.js": "/weather-app-pet-project/static/js/551.732d66de.chunk.js",
+    "static/js/154.f4543d6d.chunk.js": "/weather-app-pet-project/static/js/154.f4543d6d.chunk.js",
     "static/js/279.31e0d11f.chunk.js": "/weather-app-pet-project/static/js/279.31e0d11f.chunk.js",
     "static/media/error.png": "/weather-app-pet-project/static/media/error.905e0a8263fa7d9aab39.png",
     "static/media/error@2x.png": "/weather-app-pet-project/static/media/error@2x.1e1a8cd1642f23416528.png",
@@ -28,16 +28,16 @@
     "static/media/wind.png": "/weather-app-pet-project/static/media/wind.50a6737b7af1f06d88c2.png",
     "index.html": "/weather-app-pet-project/index.html",
     "main.b5320759.css.map": "/weather-app-pet-project/static/css/main.b5320759.css.map",
-    "main.4ebd4b71.js.map": "/weather-app-pet-project/static/js/main.4ebd4b71.js.map",
-    "665.b4e39fde.chunk.js.map": "/weather-app-pet-project/static/js/665.b4e39fde.chunk.js.map",
-    "975.b5356e51.chunk.js.map": "/weather-app-pet-project/static/js/975.b5356e51.chunk.js.map",
-    "418.d1bd18f2.chunk.js.map": "/weather-app-pet-project/static/js/418.d1bd18f2.chunk.js.map",
-    "551.d963e8ac.chunk.js.map": "/weather-app-pet-project/static/js/551.d963e8ac.chunk.js.map",
-    "154.47452a6f.chunk.js.map": "/weather-app-pet-project/static/js/154.47452a6f.chunk.js.map",
+    "main.34ced24b.js.map": "/weather-app-pet-project/static/js/main.34ced24b.js.map",
+    "665.e9ad356d.chunk.js.map": "/weather-app-pet-project/static/js/665.e9ad356d.chunk.js.map",
+    "907.c71e7936.chunk.js.map": "/weather-app-pet-project/static/js/907.c71e7936.chunk.js.map",
+    "418.20de1198.chunk.js.map": "/weather-app-pet-project/static/js/418.20de1198.chunk.js.map",
+    "551.732d66de.chunk.js.map": "/weather-app-pet-project/static/js/551.732d66de.chunk.js.map",
+    "154.f4543d6d.chunk.js.map": "/weather-app-pet-project/static/js/154.f4543d6d.chunk.js.map",
     "279.31e0d11f.chunk.js.map": "/weather-app-pet-project/static/js/279.31e0d11f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b5320759.css",
-    "static/js/main.4ebd4b71.js"
+    "static/js/main.34ced24b.js"
   ]
 }
