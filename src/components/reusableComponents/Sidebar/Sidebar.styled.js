@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledSidebar = styled.aside`
   position: sticky;
-  top: -40px;
+  top: 0;
   left: 0;
   display: flex;
   flex-direction: column;

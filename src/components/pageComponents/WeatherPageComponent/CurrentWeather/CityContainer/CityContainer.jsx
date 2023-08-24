@@ -20,14 +20,7 @@ import {
   Devider,
 } from './CityContainer.styled';
 
-const CityContainer = ({
-  city,
-  icon,
-  weatherConditions,
-  temperature,
-  // isFahrenheit,
-  // setIsFahrenheit,
-}) => {
+const CityContainer = ({ city, icon, weatherConditions, temperature }) => {
   const { isFahrenheit, setIsFahrenheit } = useTemperature();
   const [currentTime, setCurrentTime] = useState(new Date());
   const formattedDate = addLeadingZero(currentTime.getDate());

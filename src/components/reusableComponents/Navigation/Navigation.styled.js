@@ -6,11 +6,11 @@ export const StyledNavigation = styled.nav`
   margin-right: auto;
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 60px;
   margin-bottom: 80px;
 
   @media ${props => props.theme.media.tab} {
-    gap: 60px;
+    gap: 80px;
   }
 `;
 

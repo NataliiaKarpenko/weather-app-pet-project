@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const WeatherPageContainer = styled.div`
+export const PageContainer = styled.div`
   @media ${props => props.theme.media.sx} {
     width: 100%;
     max-width: 345px;

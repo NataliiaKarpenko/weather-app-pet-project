@@ -41,6 +41,7 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
   /* transition: 350ms cubic-bezier(0.4, 0, 0.2, 1); */
    
   &.modal-open{

@@ -13,7 +13,7 @@ const WeatherPageLinks = ({ city }) => {
         behavior: 'smooth',
       });
     }
-  }, 1000);
+  }, 700);
 
   return (
     <LinksContainer ref={myRef}>

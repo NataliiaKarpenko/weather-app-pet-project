@@ -15,14 +15,10 @@ export const Icon = styled.svg`
   }
 `;
 
-export const ToggleIcon = styled(Icon)`
-  width: 50px;
-
+export const ToggleIconOn = styled(Icon)`
+  width: 60px;
   transition: ${props => props.theme.transition};
   cursor: pointer;
-  @media ${props => props.theme.media.tab} {
-    width: 60px;
-  }
 
   &:hover {
     scale: 1.02;

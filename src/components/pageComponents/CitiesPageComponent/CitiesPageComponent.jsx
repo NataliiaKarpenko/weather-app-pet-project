@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import CityItem from './CityItem/CityItem';
 import { useSearchParams } from 'react-router-dom';
+import { PageContainer } from 'components/reusableComponents/StyleComponents/PageContainer.styled';
 
 const cities = [
   'Brasilia',
@@ -58,14 +59,13 @@ const CitiesPageComponent = () => {
   console.log(randomCities);
 
   return (
-    <div>
-      <h2>Randomly Selected Cities and Weather</h2>
+    <PageContainer>
       <ul>
         {randomCities.map(city => (
           <CityItem city={city} />
         ))}
       </ul>
-    </div>
+    </PageContainer>
   );
 };
 

@@ -5,7 +5,7 @@ import { Outlet, useSearchParams } from 'react-router-dom';
 
 import CurrentWeather from './CurrentWeather/CurrentWeather';
 import { requestWeatherByCity } from '../../../services/API_services';
-import { WeatherPageContainer } from './WeatherPageComponent.styled';
+import { PageContainer } from '../../reusableComponents/StyleComponents/PageContainer.styled';
 import WeatherPageLinks from './WeatherPageLinks/WeatherPageLinks';
 import { useTemperature } from '../../../hooks/TemperatureContext';
 import Error from 'components/reusableComponents/Error/Error';
@@ -77,7 +77,7 @@ const WeatherPageComponent = () => {
   }, [windowWidth]);
 
   return (
-    <WeatherPageContainer>
+    <PageContainer>
       {status === 'pending' && <Spinner />}
 
       {status === 'resolved' && (
@@ -101,7 +101,7 @@ const WeatherPageComponent = () => {
       {status === 'rejected' && (
         <Error status={status} open={openError} setOpen={setOpenError} />
       )}
-    </WeatherPageContainer>
+    </PageContainer>
   );
 };
 

@@ -3,9 +3,8 @@ import styled from 'styled-components';
 export const StyledMain = styled.div`
   position: relative;
   background: ${props => props.theme.dark.mainPageBackground};
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 25px;
-  overflow-y: auto;
 
   @media ${props => props.theme.media.sx} {
     display: ${props => (props.displayFlex ? 'flex' : 'block')};
