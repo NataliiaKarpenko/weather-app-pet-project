@@ -6,9 +6,12 @@ import Menu from '../../reusableComponents/Menu/Menu';
 import { StyledFooter } from './Footer.styled';
 import MenuIcon from './FooterIcons/MenuIcon';
 import ArrowIcon from './FooterIcons/ArrowIcon';
+import { useLocation } from 'react-router-dom';
 
 const Footer = ({ displayFlex }) => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const citiesPage = location.pathname.includes('/cities');
 
   const menuOpenHandler = () => {
     setOpen(true);
@@ -18,7 +21,7 @@ const Footer = ({ displayFlex }) => {
     <StyledFooter displayFlex={displayFlex}>
       <FooterContainer>
         <Logo />
-        <ArrowIcon />
+        {citiesPage && <ArrowIcon />}
 
         <MenuIcon menuOpenHandler={menuOpenHandler} />
       </FooterContainer>

@@ -30,7 +30,7 @@ const SharedLayOut = () => {
   }, []);
 
   useEffect(() => {
-    if (viewportHeight > heightContentContainer) {
+    if (viewportHeight >= heightContentContainer + 155) {
       setCalculatedHeight(heightContentContainer);
       setDisplayFlex(true);
     } else {
