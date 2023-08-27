@@ -53,6 +53,7 @@ export const Link = styled(NavLink)`
   &:hover {
     scale: 1.01;
     background-color: transparent;
+    color: ${props => props.theme.globalColors.buttonBg};
     border: 1px solid ${props => props.theme.globalColors.buttonBg};
   }
 `;

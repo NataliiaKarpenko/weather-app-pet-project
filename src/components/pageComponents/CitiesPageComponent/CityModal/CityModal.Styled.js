@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const StyledBackdrop = styled.div`
   position: fixed;
@@ -58,5 +58,23 @@ export const ModalContainer = styled.div`
     padding-right: 30px;
     top: 40px;
     width: 550px;
+  }
+`;
+
+export const Button = styled.button`
+  ${props =>
+    props.status === 'modal' &&
+    css`
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    `}
+  background-color: transparent;
+  border: none;
+  outline: none;
+  transition: ${props => props.theme.transition};
+
+  &:hover {
+    scale: 1.02;
   }
 `;

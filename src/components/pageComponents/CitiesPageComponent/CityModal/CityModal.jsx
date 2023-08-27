@@ -1,7 +1,7 @@
 import { CSSTransition } from 'react-transition-group';
 import { useRef } from 'react';
 
-import { ModalContainer, StyledBackdrop } from './CityModal.Styled';
+import { ModalContainer, StyledBackdrop, Button } from './CityModal.Styled';
 import CurrentWeatherContainer from './CurrentWeatherContainer/CurrentWeatherContainer';
 
 import TodaysWeather from './TodaysWeather/TodaysWeather';
@@ -84,7 +84,9 @@ const CityModal = ({
         >
           <StyledBackdrop onClick={handleBackdropClick}>
             <ModalContainer>
-              <InputClose status="modal" onClick={handleCloseClick} />
+              <Button status="modal">
+                <InputClose onClick={handleCloseClick} />
+              </Button>
               <CurrentWeatherContainer
                 cityName={cityName}
                 icon={icon}

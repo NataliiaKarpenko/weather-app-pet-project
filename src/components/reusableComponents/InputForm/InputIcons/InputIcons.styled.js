@@ -1,14 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const InputIcon = styled.svg`
-  ${props =>
-    props.status === 'modal' &&
-    css`
-      position: absolute;
-      top: 10px;
-      right: 10px;
-    `}
-
   width: 20px;
   height: 20px;
   fill: ${props => props.theme.title};

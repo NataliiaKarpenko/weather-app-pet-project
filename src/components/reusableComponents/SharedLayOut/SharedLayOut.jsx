@@ -30,18 +30,17 @@ const SharedLayOut = () => {
   }, []);
 
   useEffect(() => {
-    if (viewportHeight >= heightContentContainer + 155) {
+    if (
+      (windowWidth < 768 && viewportHeight >= heightContentContainer + 155) ||
+      (windowWidth >= 768 && viewportHeight >= heightContentContainer)
+    ) {
       setCalculatedHeight(heightContentContainer);
       setDisplayFlex(true);
-      console.log(viewportHeight);
-      console.log(heightContentContainer);
     } else {
       setCalculatedHeight(viewportHeight);
       setDisplayFlex(false);
-      console.log(viewportHeight);
-      console.log(heightContentContainer);
     }
-  }, [viewportHeight, heightContentContainer]);
+  }, [viewportHeight, heightContentContainer, windowWidth]);
 
   const setMinHeight = () => {
     let minHeight;
