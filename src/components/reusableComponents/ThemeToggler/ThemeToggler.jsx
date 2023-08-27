@@ -6,8 +6,6 @@ import { Button } from './ThemeToggler.styled';
 const ThemeToggler = () => {
   const { isDarkMode, setIsDarkMode } = useThemeMode();
 
-  console.log(isDarkMode);
-
   return (
     <Button type="button" onClick={() => setIsDarkMode(!isDarkMode)}>
       {!isDarkMode && <IconToggleOff />}

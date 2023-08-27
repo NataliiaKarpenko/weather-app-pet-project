@@ -1,4 +1,3 @@
-import { useThemeMode } from 'hooks/ThemeContext';
 import Logo from '../Logo/Logo';
 import IconListUl from '../NavigationIcons/IconListUl';
 import IconWeatherHailSun from '../NavigationIcons/IconWeatherHailSun';
@@ -6,10 +5,7 @@ import { NavigationLink, StyledNavigation } from './Navigation.styled';
 import { useLocation } from 'react-router-dom';
 
 const Navigation = ({ status, handleLinkClick }) => {
-  const { isDarkMode } = useThemeMode();
   const location = useLocation();
-
-  console.log(isDarkMode);
 
   return (
     <div>

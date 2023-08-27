@@ -33,9 +33,13 @@ const SharedLayOut = () => {
     if (viewportHeight >= heightContentContainer + 155) {
       setCalculatedHeight(heightContentContainer);
       setDisplayFlex(true);
+      console.log(viewportHeight);
+      console.log(heightContentContainer);
     } else {
       setCalculatedHeight(viewportHeight);
       setDisplayFlex(false);
+      console.log(viewportHeight);
+      console.log(heightContentContainer);
     }
   }, [viewportHeight, heightContentContainer]);
 
@@ -43,7 +47,7 @@ const SharedLayOut = () => {
     let minHeight;
     if (city) {
       if (windowWidth >= 1440) {
-        minHeight = calculatedHeight + 40;
+        minHeight = calculatedHeight + 80;
       } else if (windowWidth >= 768) {
         minHeight = calculatedHeight + 30;
       } else {
