@@ -1,15 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
-import { lazy } from 'react';
-import { GlobalStyle } from '../Styles/GlobalStyle';
+import { lazy, Suspense } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../Styles/Theme';
 
-// import { Toaster } from 'react-hot-toast';
+import { GlobalStyle } from '../Styles/GlobalStyle';
+import { theme } from '../Styles/Theme';
 import { TemperatureProvider } from '../hooks/TemperatureContext';
-import { Suspense } from 'react';
 import Spinner from './reusableComponents/Spinner/Spinner';
 import SharedLayOut from './reusableComponents/SharedLayOut/SharedLayOut';
 import Notification from './reusableComponents/Notification/Notification';
+import { useThemeMode } from 'hooks/ThemeContext';
+
 const WelcomePage = lazy(() => import('../pages/WelcomePage'));
 const WeatherPage = lazy(() => import('../pages/WeatherPage'));
 const HourlyForecastMobPage = lazy(() =>
@@ -20,11 +20,13 @@ const SevenDaysForecastMobPage = lazy(() =>
 );
 const CitiesPage = lazy(() => import('../pages/CitiesPage'));
 
-function App() {
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
+const App = () => {
+  const { isDarkMode } = useThemeMode();
 
+  console.log(isDarkMode);
+  return (
+    <ThemeProvider theme={theme(isDarkMode)}>
+      <GlobalStyle />
       <TemperatureProvider>
         <Notification />
         <Suspense fallback={<Spinner />}>
@@ -48,6 +50,6 @@ function App() {
       </TemperatureProvider>
     </ThemeProvider>
   );
-}
+};
 
 export default App;

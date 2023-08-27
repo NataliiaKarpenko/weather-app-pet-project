@@ -14,7 +14,7 @@ import {
   Max,
   Min,
   Title,
-} from './SevenDaysForecastComponent.styled';
+} from '../../reusableComponents/StyleComponents/SeveralDaysForecastComponent.styled';
 
 const SevenDaysForecastComponent = () => {
   const [forecast, setForecast] = useState([]);

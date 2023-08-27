@@ -3,9 +3,9 @@ import { CSSTransition } from 'react-transition-group';
 import { useRef } from 'react';
 
 import Navigation from '../Navigation/Navigation';
-import IconToggleOn from '../NavigationIcons/IconToggleOn';
 import { ContentContainer, StyledBackdrop } from './Menu.styled';
 import { removeBodyscroll } from '../../../utils/removeBodyScroll';
+import ThemeToggler from '../ThemeToggler/ThemeToggler';
 
 const Menu = ({ open, setOpen }) => {
   const menuRef = useRef();
@@ -46,7 +46,7 @@ const Menu = ({ open, setOpen }) => {
       <StyledBackdrop onClick={handleBackdropClick}>
         <ContentContainer>
           <Navigation status="menu" handleLinkClick={handleLinkClick} />
-          <IconToggleOn />
+          <ThemeToggler />
         </ContentContainer>
       </StyledBackdrop>
     </CSSTransition>

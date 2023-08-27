@@ -18,13 +18,6 @@ const InputForm = () => {
     ? urlSearchParams.charAt(0).toUpperCase() + urlSearchParams.slice(1)
     : '';
   const [inputValue, setInputValue] = useState(city);
-
-  useEffect(() => {
-    if (!city) {
-      setInputValue('');
-    }
-  }, [city]);
-
   const [message, setMessage] = useState('');
   const [close, setClose] = useState(() => {
     if (!inputValue) {
@@ -34,6 +27,16 @@ const InputForm = () => {
     }
   });
   const isError = message ? true : false;
+
+  useEffect(() => {
+    if (!city) {
+      setInputValue('');
+      setClose(false);
+    } else {
+      setInputValue(city);
+      setClose(true);
+    }
+  }, [city]);
 
   const onInputChange = event => {
     const newInputValue = event.target.value;

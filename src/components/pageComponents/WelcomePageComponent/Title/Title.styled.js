@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const StyledTitle = styled.div`
   display: flex;
@@ -8,11 +8,11 @@ export const StyledTitle = styled.div`
   align-items: center;
   height: 100%;
 
-  @media ${(props) => props.theme.media.tab} {
+  @media ${props => props.theme.media.tab} {
     width: calc(100% / 2);
   }
 
-  @media ${(props) => props.theme.media.desktop} {
+  @media ${props => props.theme.media.desktop} {
     width: calc(100% / 2);
   }
 `;
@@ -28,14 +28,14 @@ export const Headline = styled.h1`
   font-weight: 800;
   line-height: 1.5%;
   letter-spacing: 0.2em;
-  color: ${(props) => props.theme.dark.primaryText};
+  color: ${props => props.theme.primaryText};
 `;
 
 export const Text = styled.p`
   margin-bottom: 50px;
   font-size: 25px;
   font-weight: 500;
-  color: ${(props) => props.theme.dark.secondaryText};
+  color: ${props => props.theme.secondaryText};
 `;
 
 export const Link = styled(NavLink)`
@@ -47,12 +47,12 @@ export const Link = styled(NavLink)`
   border-radius: 30px;
   font-size: 20px;
   font-weight: 400;
-  color: ${(props) => props.theme.globalColors.buttonText};
-  background-color: ${(props) => props.theme.globalColors.buttonBg};
+  color: ${props => props.theme.globalColors.buttonText};
+  background-color: ${props => props.theme.globalColors.buttonBg};
 
   &:hover {
     scale: 1.01;
     background-color: transparent;
-    border: 1px solid ${(props) => props.theme.globalColors.buttonBg};
+    border: 1px solid ${props => props.theme.globalColors.buttonBg};
   }
 `;

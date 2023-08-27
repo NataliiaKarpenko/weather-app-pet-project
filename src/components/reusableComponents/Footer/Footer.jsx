@@ -4,7 +4,8 @@ import { FooterContainer } from '../../reusableComponents/StyleComponents/Contai
 import Logo from '../Logo/Logo';
 import Menu from '../../reusableComponents/Menu/Menu';
 import { StyledFooter } from './Footer.styled';
-import MenuIcon from './MenuIcon/MenuIcon';
+import MenuIcon from './FooterIcons/MenuIcon';
+import ArrowIcon from './FooterIcons/ArrowIcon';
 
 const Footer = ({ displayFlex }) => {
   const [open, setOpen] = useState(false);
@@ -12,12 +13,13 @@ const Footer = ({ displayFlex }) => {
   const menuOpenHandler = () => {
     setOpen(true);
   };
-  console.log(displayFlex);
 
   return (
     <StyledFooter displayFlex={displayFlex}>
       <FooterContainer>
         <Logo />
+        <ArrowIcon />
+
         <MenuIcon menuOpenHandler={menuOpenHandler} />
       </FooterContainer>
       <Menu open={open} setOpen={setOpen} />

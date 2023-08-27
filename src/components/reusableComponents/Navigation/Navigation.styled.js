@@ -7,11 +7,7 @@ export const StyledNavigation = styled.nav`
   display: flex;
   flex-direction: column;
   gap: 60px;
-  margin-bottom: 80px;
-
-  @media ${props => props.theme.media.tab} {
-    gap: 80px;
-  }
+  margin-bottom: 60px;
 `;
 
 export const NavigationLink = styled(NavLink)`
@@ -21,7 +17,7 @@ export const NavigationLink = styled(NavLink)`
   gap: 20px;
   font-size: 25px;
 
-  color: ${props => props.theme.dark.title};
+  color: ${props => props.theme.title};
   transition: ${props => props.theme.transition};
 
   @media ${props => props.theme.media.tab} {
@@ -34,13 +30,13 @@ export const NavigationLink = styled(NavLink)`
 
   &.active {
     font-weight: 500;
-    color: ${props => props.theme.dark.activeLink};
-    fill: ${props => props.theme.dark.activeLink};
+    color: ${props => props.theme.activeLink};
+    fill: ${props => props.theme.activeLink};
   }
 
   &.active svg {
-    fill: ${props => props.theme.dark.activeLink};
-    stroke: ${props => props.theme.dark.activeLink};
+    fill: ${props => props.theme.activeLink};
+    stroke: ${props => props.theme.activeLink};
   }
 
   &:hover {

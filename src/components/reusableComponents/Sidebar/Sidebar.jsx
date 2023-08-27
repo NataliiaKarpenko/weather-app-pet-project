@@ -1,15 +1,17 @@
+import { useLocation } from 'react-router-dom';
+import ArrowIcon from '../Footer/FooterIcons/ArrowIcon';
 import Navigation from '../Navigation/Navigation';
-// import IconToggleOff from "../NavigationIcons/IconToggleOff";
-import IconToggleOn from '../NavigationIcons/IconToggleOn';
+import ThemeToggler from '../ThemeToggler/ThemeToggler';
 import { StyledSidebar } from './Sidebar.styled';
 
 const Sidebar = ({ style }) => {
+  const location = useLocation();
+  const citiesPage = location.pathname.includes('/cities');
   return (
-    <StyledSidebar style={style}>
+    <StyledSidebar style={style} citiesPage={citiesPage}>
+      {citiesPage && <ArrowIcon status="sidebar" />}
       <Navigation />
-
-      {/* <IconToggleOff /> */}
-      <IconToggleOn />
+      <ThemeToggler />
     </StyledSidebar>
   );
 };

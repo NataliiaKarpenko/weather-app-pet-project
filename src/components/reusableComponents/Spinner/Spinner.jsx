@@ -1,4 +1,4 @@
-import { Vortex } from "react-loader-spinner";
+import { Vortex } from 'react-loader-spinner';
 
 const Spinner = () => {
   return (
@@ -9,19 +9,20 @@ const Spinner = () => {
         width="80"
         ariaLabel="vortex-loading"
         wrapperStyle={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          zIndex: '10000',
         }}
         wrapperClass="vortex-wrapper"
         colors={[
-          "orange",
-          "#009939",
-          "#1313B7",
-          "#F1CD00",
-          "#D50201",
-          "purple",
+          'orange',
+          '#009939',
+          '#1313B7',
+          '#F1CD00',
+          '#D50201',
+          'purple',
         ]}
       />
     </div>

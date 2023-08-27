@@ -1,13 +1,12 @@
-import { NavLink } from 'react-router-dom';
 import umbrella1 from '../../../images/umbrella.png';
 import umbrella2 from '../../../images/umbrella@2x.png';
-import { Image } from './Logo.styled';
+import { Link, Image } from './Logo.styled';
 
-const Logo = () => {
+const Logo = ({ status }) => {
   return (
-    <NavLink to="/">
+    <Link to="/" status={status}>
       <Image srcSet={`${umbrella2} 2x`} src={umbrella1} alt="sun" />
-    </NavLink>
+    </Link>
   );
 };
 

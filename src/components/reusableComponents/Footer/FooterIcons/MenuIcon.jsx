@@ -1,5 +1,5 @@
-import * as React from "react";
-import { StyledMenuIcon } from "./MenuIcon.styled";
+import * as React from 'react';
+import { StyledMenuIcon } from './FooterIcon.styled';
 
 function MenuIcon({ menuOpenHandler }) {
   return (

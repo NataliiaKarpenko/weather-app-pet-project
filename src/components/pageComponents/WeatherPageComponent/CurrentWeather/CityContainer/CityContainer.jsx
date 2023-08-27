@@ -43,7 +43,7 @@ const CityContainer = ({ city, icon, weatherConditions, temperature }) => {
 
   const celsiusClickHandler = () => {
     setIsFahrenheit(false);
-    localStorage.setItem('isFahrenheit', JSON.stringify(isFahrenheit));
+    // localStorage.setItem('isFahrenheit', JSON.stringify(isFahrenheit));
   };
 
   return (

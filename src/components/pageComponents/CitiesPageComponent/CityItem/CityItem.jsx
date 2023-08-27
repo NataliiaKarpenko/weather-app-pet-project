@@ -1,45 +1,39 @@
-import { useState } from 'react';
-// import { useSearchParams } from 'react-router-dom';
-// import { useTemperature } from '../../../../hooks/TemperatureContext';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
-import {
-  requestLocalTime,
-  requestWeatherByCity,
-} from '../../../../services/API_services';
 
-const CityItem = ({ city }) => {
+import { requestWeatherByCity } from '../../../../services/API_services';
+import { Image, WeatherContainer, City, Temp } from './CityItem.styled';
+import { setTemp } from 'utils/setTemp';
+import { useTemperature } from 'hooks/TemperatureContext';
+import CityModal from '../CityModal/CityModal';
+
+const CityItem = ({ city, searchCity }) => {
+  const { isFahrenheit } = useTemperature();
+  const unit = isFahrenheit ? 'F' : 'C';
+
+  const [cityName, setCityName] = useState('');
   const [icon, setIcon] = useState('');
   const [temperature, setTemperature] = useState('');
   const [weatherConditions, setWeatherConditions] = useState('');
-  // const [status, setStatus] = useState('idle');
-  // const [searchParams, setSearchParams] = useSearchParams();
-  // const searchCity = searchParams.get('city');
-  const [cityName, setCityName] = useState('');
-  const [localTime, setLocalTime] = useState('');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
-    const getData = async () => {
+    const getWeatherByCity = async () => {
       try {
-        console.log(city);
-
         const weatherInfo = await requestWeatherByCity(city);
-        const localTime = await requestLocalTime(city);
-
-        setLocalTime(localTime);
-        console.log(localTime);
         setCityName(weatherInfo.data.name);
         setTemperature(weatherInfo.data.main.temp);
         setIcon(weatherInfo.data.weather[0].icon);
         setWeatherConditions(weatherInfo.data.weather[0].main);
-        console.log(weatherInfo);
       } catch (error) {
-        if (city) {
-          // searchParams.delete("city");
-          // setSearchParams(searchParams);
-          // setStatus('rejected');
-
+        console.log(error);
+        if (searchCity) {
           if (error.message === 'Request failed with status code 404') {
+            searchParams.delete('city');
+            setSearchParams(searchParams);
+
             toast.error(
               'There is no result matching your query. Check its spelling or enter another city',
               {
@@ -54,34 +48,34 @@ const CityItem = ({ city }) => {
         }
       }
     };
+    getWeatherByCity(city);
+  }, [searchCity, searchParams, setSearchParams, city]);
 
-    getData(city);
-  }, [city]);
-  console.log(localTime);
-
-  // useEffect(() => {
-  //   const getLocalTime = async () => {
-  //     try {
-  //       const localTime = await requestLocalTime(cityName);
-  //       setLocalTime(localTime);
-  //     } catch (e) {
-  //       console.log(e);
-  //     }
-  //   };
-  //   getLocalTime(cityName);
-  // }, [cityName]);
+  const openModalHandler = () => {
+    setOpenModal(true);
+  };
 
   return (
     <div>
-      <img
-        src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
-        alt={`${weatherConditions}`}
+      <CityModal
+        cityName={cityName}
+        icon={icon}
+        temperature={setTemp(isFahrenheit, temperature)}
+        weatherConditions={weatherConditions}
+        openModal={openModal}
+        setOpenModal={setOpenModal}
       />
-      <div>
-        <p style={{ color: 'white' }}>{cityName}</p>
-        <p style={{ color: 'white' }}>{localTime}</p>
-      </div>
-      <p style={{ color: 'white' }}>{temperature}</p>
+
+      <WeatherContainer onClick={openModalHandler}>
+        <Image
+          src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
+          alt={`${weatherConditions}`}
+        />
+        <City>{cityName}</City>
+        <Temp>
+          {setTemp(isFahrenheit, temperature)}° {unit}
+        </Temp>
+      </WeatherContainer>
     </div>
   );
 };

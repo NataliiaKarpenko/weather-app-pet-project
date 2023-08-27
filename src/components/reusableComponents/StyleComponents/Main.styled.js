@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledMain = styled.div`
   position: relative;
-  background: ${props => props.theme.dark.mainPageBackground};
+  background: ${props => props.theme.mainPageBackground};
   min-height: 100vh;
   padding-top: 25px;
 
@@ -26,6 +26,10 @@ export const StyledMain = styled.div`
 `;
 
 export const StyledWelcomePageMain = styled(StyledMain)`
-  background: ${props => props.theme.dark.mainBackground};
   height: 100vh;
+  padding-bottom: 25px;
+
+  @media ${props => props.theme.media.tab} {
+    padding-bottom: 40px;
+  }
 `;

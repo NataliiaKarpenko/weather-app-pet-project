@@ -98,9 +98,7 @@ const WeatherPageComponent = () => {
           <Outlet />
         </div>
       )}
-      {status === 'rejected' && (
-        <Error status={status} open={openError} setOpen={setOpenError} />
-      )}
+      {status === 'rejected' && <Error status={status} open={openError} />}
     </PageContainer>
   );
 };

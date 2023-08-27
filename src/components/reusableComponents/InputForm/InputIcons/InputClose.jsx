@@ -1,4 +1,4 @@
-import { InputIcon } from "./InputIcons.styled";
+import { InputIcon } from './InputIcons.styled';
 
 function InputClose(props) {
   return (

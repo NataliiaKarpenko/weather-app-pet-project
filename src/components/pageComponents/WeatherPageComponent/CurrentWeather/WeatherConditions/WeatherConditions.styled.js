@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const WeatherConditionsContainer = styled.div`
   margin-bottom: 20px;
@@ -6,13 +6,13 @@ export const WeatherConditionsContainer = styled.div`
   justify-content: space-between;
   padding: 15px;
   border-radius: 20px;
-  background-color: ${(props) => props.theme.dark.contentBackground};
+  background-color: ${props => props.theme.contentBackground};
 
-  @media ${(props) => props.theme.media.tab} {
+  @media ${props => props.theme.media.tab} {
     padding: 30px;
   }
 
-  @media ${(props) => props.theme.media.desktop} {
+  @media ${props => props.theme.media.desktop} {
     padding: 30px 40px;
   }
 `;
@@ -21,7 +21,7 @@ export const WeatherConditionsItem = styled.li`
   &:first-child {
     margin-bottom: 25px;
 
-    @media ${(props) => props.theme.media.tab} {
+    @media ${props => props.theme.media.tab} {
       margin-bottom: 30px;
     }
   }
@@ -36,13 +36,13 @@ export const TitleContainer = styled.div`
 
 export const Title = styled.p`
   font-size: 18px;
-  color: ${(props) => props.theme.dark.secondaryText};
+  color: ${props => props.theme.secondaryText};
 
-  @media ${(props) => props.theme.media.tab} {
+  @media ${props => props.theme.media.tab} {
     font-size: 20px;
   }
 
-  @media ${(props) => props.theme.media.desktop} {
+  @media ${props => props.theme.media.desktop} {
     font-size: 22px;
   }
 `;
@@ -52,14 +52,14 @@ export const Text = styled.p`
   padding-left: 37px;
   font-size: 20px;
   font-weight: 600;
-  transition: ${(props) => props.theme.transition};
-  color: ${(props) => props.theme.dark.secondaryText};
+  transition: ${props => props.theme.transition};
+  color: ${props => props.theme.secondaryText};
 
-  @media ${(props) => props.theme.media.tab} {
+  @media ${props => props.theme.media.tab} {
     font-size: 25px;
   }
 
-  @media ${(props) => props.theme.media.desktop} {
+  @media ${props => props.theme.media.desktop} {
     font-size: 28px;
   }
 `;

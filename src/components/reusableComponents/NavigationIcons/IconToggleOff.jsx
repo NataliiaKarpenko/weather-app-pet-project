@@ -1,9 +1,10 @@
-import { ToggleIcon } from "./WeatherIcons.styled";
+import { ToggleIcon } from './WeatherIcons.styled';
 
 function IconToggleOff(props) {
   return (
-    <ToggleIcon viewBox="-1 2 18 18" {...props}>
-      <path d="M11 4a4 4 0 010 8H8a4.992 4.992 0 002-4 4.992 4.992 0 00-2-4h3zm-6 8a4 4 0 110-8 4 4 0 010 8zM0 8a5 5 0 005 5h6a5 5 0 000-10H5a5 5 0 00-5 5z" />
+    <ToggleIcon viewBox="-1 2 22 12" {...props}>
+      <path d="M9 11c.628-.836 1-1.874 1-3a4.978 4.978 0 00-1-3h4a3 3 0 110 6H9z" />
+      <path d="M5 12a4 4 0 110-8 4 4 0 010 8zm0 1A5 5 0 105 3a5 5 0 000 10z" />
     </ToggleIcon>
   );
 }

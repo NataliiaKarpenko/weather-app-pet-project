@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledDecoration = styled.div`
-  background-color: ${props => props.theme.dark.contentBackground};
+  background-color: ${props => props.theme.contentBackground};
 
   @media ${props => props.theme.media.sx} {
     display: none;

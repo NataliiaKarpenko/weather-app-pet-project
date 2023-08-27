@@ -8,13 +8,13 @@ const Notification = () => {
         position="top-center"
         toastOptions={{
           error: {
-            duration: 1000,
+            duration: 2000,
             style: {
-              border: `2px solid ${theme.globalColors.error}`,
-              color: ` ${theme.globalColors.error}`,
+              border: `2px solid ${theme().globalColors.error}`,
+              color: ` ${theme().globalColors.error}`,
             },
             iconTheme: {
-              primary: `${theme.globalColors.error}`,
+              primary: `${theme().globalColors.error}`,
               secondary: 'white',
             },
           },

@@ -5,7 +5,7 @@ import error1 from '../../../images/error.png';
 import error2 from '../../../images/error@2x.png';
 import { Image, ImageContainer, ErrorText } from './Error.styled';
 
-const Error = ({ open, setOpen }) => {
+const Error = ({ open }) => {
   const errorRef = useRef();
 
   return (

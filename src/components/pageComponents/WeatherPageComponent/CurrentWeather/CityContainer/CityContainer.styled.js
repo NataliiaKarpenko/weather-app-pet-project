@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledCityContainer = styled.div`
   width: 100%;
@@ -7,7 +7,7 @@ export const StyledCityContainer = styled.div`
 
   justify-content: space-between;
 
-  @media ${(props) => props.theme.media.desktop} {
+  @media ${props => props.theme.media.desktop} {
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 30px;
@@ -20,9 +20,9 @@ export const City = styled.li`
   font-weight: 600;
   font-size: 30px;
   line-height: 1.5;
-  color: ${(props) => props.theme.dark.primaryText};
+  color: ${props => props.theme.primaryText};
 
-  @media ${(props) => props.theme.media.desktop} {
+  @media ${props => props.theme.media.desktop} {
     margin-bottom: 40px;
     font-weight: 600;
     font-size: 60px;
@@ -33,9 +33,9 @@ export const DateMonthYear = styled.li`
   font-size: 20px;
   line-height: 1;
   margin-bottom: 10px;
-  color: ${(props) => props.theme.dark.secondaryText};
+  color: ${props => props.theme.secondaryText};
 
-  @media ${(props) => props.theme.media.desktop} {
+  @media ${props => props.theme.media.desktop} {
     font-size: 25px;
   }
 `;
@@ -43,9 +43,9 @@ export const DateMonthYear = styled.li`
 export const DayTime = styled.li`
   font-size: 16px;
   line-height: 1;
-  color: ${(props) => props.theme.dark.secondaryText};
+  color: ${props => props.theme.secondaryText};
 
-  @media ${(props) => props.theme.media.desktop} {
+  @media ${props => props.theme.media.desktop} {
     font-size: 20px;
   }
 `;
@@ -57,7 +57,7 @@ export const Icon = styled.img`
   top: -20px;
   width: 100px;
 
-  @media ${(props) => props.theme.media.desktop} {
+  @media ${props => props.theme.media.desktop} {
     top: -50px;
     width: 200px;
   }
@@ -79,9 +79,9 @@ export const Degrees = styled.span`
   font-size: 30px;
   font-weight: 500;
   line-height: 1;
-  color: ${(props) => props.theme.dark.primaryText};
+  color: ${props => props.theme.primaryText};
 
-  @media ${(props) => props.theme.media.desktop} {
+  @media ${props => props.theme.media.desktop} {
     font-size: 40px;
   }
 `;
@@ -90,23 +90,21 @@ export const Units = styled.button`
   border: none;
   background-color: transparent;
   font-size: 18px;
-  transition: ${(props) => props.theme.transition};
-  color: ${(props) =>
-    props.active
-      ? props.theme.dark.primaryText
-      : props.theme.dark.secondaryText};
+  transition: ${props => props.theme.transition};
+  color: ${props =>
+    props.active ? props.theme.primaryText : props.theme.secondaryText};
 
-  cursor: ${(props) => (props.active ? "auto" : "pointer")};
-  @media ${(props) => props.theme.media.desktop} {
+  cursor: ${props => (props.active ? 'auto' : 'pointer')};
+  @media ${props => props.theme.media.desktop} {
     font-size: 25px;
   }
 `;
 
 export const Devider = styled.span`
   font-size: 18px;
-  color: ${(props) => props.theme.dark.primaryText};
+  color: ${props => props.theme.primaryText};
 
-  @media ${(props) => props.theme.media.desktop} {
+  @media ${props => props.theme.media.desktop} {
     font-size: 25px;
   }
 `;

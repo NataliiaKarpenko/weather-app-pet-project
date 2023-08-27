@@ -8,7 +8,7 @@ export const LinksContainer = styled.div`
   padding: 15px;
   border-radius: 20px;
 
-  background-color: ${props => props.theme.dark.contentBackground};
+  background-color: ${props => props.theme.contentBackground};
 
   @media ${props => props.theme.media.tab} {
     padding: 30px;
@@ -17,7 +17,7 @@ export const LinksContainer = styled.div`
 
 export const WeatherPageLink = styled(NavLink)`
   font-size: 16px;
-  color: ${props => props.theme.dark.secondaryText};
+  color: ${props => props.theme.secondaryText};
   transition: ${props => props.theme.transition};
 
   @media ${props => props.theme.media.tab} {
@@ -25,7 +25,7 @@ export const WeatherPageLink = styled(NavLink)`
   }
 
   &.active {
-    color: ${props => props.theme.dark.activeLink};
+    color: ${props => props.theme.activeLink};
     cursor: default;
 
     &:hover {

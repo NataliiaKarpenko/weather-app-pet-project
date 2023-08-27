@@ -12,8 +12,8 @@ export const InputContainer = styled.div`
   display: flex;
   border-radius: 30px;
 
-  background-color: ${props => props.theme.dark.contentBackground};
-  color: ${props => props.theme.dark.input};
+  background-color: ${props => props.theme.contentBackground};
+  color: ${props => props.theme.input};
   border: ${props =>
     props.isError
       ? `1px solid ${props.theme.globalColors.error}`
@@ -30,11 +30,11 @@ export const Input = styled.input`
   outline: none;
   background-color: transparent;
 
-  color: ${props => props.theme.dark.input};
+  color: ${props => props.theme.input};
   font-size: 16px;
 
   &::placeholder {
-    color: ${props => props.theme.dark.placeholder};
+    color: ${props => props.theme.placeholder};
   }
 
   @media ${props => props.theme.media.tab} {
@@ -49,7 +49,7 @@ export const Button = styled.button`
   outline: none;
 
   border-left: ${props =>
-    props.type === 'submit' ? `1px solid ${props.theme.dark.placeholder}` : ''};
+    props.type === 'submit' ? `1px solid ${props.theme.placeholder}` : ''};
   transition: ${props => props.theme.transition};
 
   @media ${props => props.theme.media.desktop} {
@@ -57,7 +57,7 @@ export const Button = styled.button`
   }
 
   &:hover svg {
-    scale: 1.02;
+    scale: 1.05;
   }
 `;
 

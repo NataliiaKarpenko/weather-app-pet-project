@@ -7,7 +7,7 @@ export const StyledContainer = styled.div`
   padding: 15px;
 
   border-radius: 20px;
-  background-color: ${props => props.theme.dark.containerBackground};
+  background-color: ${props => props.theme.containerBackground};
 
   @media ${props => props.theme.media.sx} {
     width: 100%;

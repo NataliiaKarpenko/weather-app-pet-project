@@ -40,5 +40,5 @@ export const ContentContainer = styled.div`
   border-top-right-radius: 80px;
   border-bottom-right-radius: 80px;
 
-  background-color: ${props => props.theme.dark.contentBackground};
+  background-color: ${props => props.theme.contentBackground};
 `;

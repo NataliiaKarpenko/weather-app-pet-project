@@ -18,7 +18,7 @@ export const ImageContainer = styled.div`
   &.error-exit-active {
     opacity: 0;
     scale: 0;
-    /* transform: translateY(-100%); */
+
     transition: ${props => props.theme.transition};
   }
   display: flex;
@@ -68,7 +68,7 @@ export const ErrorText = styled.p`
   font-size: 20px;
   font-weight: 700;
   text-align: center;
-  color: ${props => props.theme.dark.secondaryText};
+  color: ${props => props.theme.secondaryText};
 
   @media ${props => props.theme.media.tab} {
     font-size: 22px;
