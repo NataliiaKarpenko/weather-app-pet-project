@@ -23,7 +23,6 @@ const CitiesPage = lazy(() => import('../pages/CitiesPage'));
 const App = () => {
   const { isDarkMode } = useThemeMode();
 
-  console.log(isDarkMode);
   return (
     <ThemeProvider theme={theme(isDarkMode)}>
       <GlobalStyle />

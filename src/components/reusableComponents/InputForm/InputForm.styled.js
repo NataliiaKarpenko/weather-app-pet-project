@@ -69,6 +69,7 @@ export const ErrorMessage = styled.p`
   font-size: 14px;
 
   @media ${props => props.theme.media.tab} {
+    bottom: -45%;
     font-size: 16px;
   }
 `;

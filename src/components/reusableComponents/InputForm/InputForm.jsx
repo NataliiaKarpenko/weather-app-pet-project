@@ -50,9 +50,7 @@ const InputForm = () => {
     }
 
     if (!letterTest.test(newInputValue) && newInputValue.length !== 0) {
-      setMessage(
-        'Invalid name. May contain only letters,  apostrophes, hyphens and spaces.'
-      );
+      setMessage('Invalid name');
     } else {
       setMessage('');
     }
